@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pybites_search"
+version = "0.0.1"
+authors = [
+  { name="Example Author", email="info@pybit.es" },
+]
+description = "A search engine for Pybites content"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/pybites/search"
+"Bug Tracker" = "https://github.com/pybites/search/issues"
