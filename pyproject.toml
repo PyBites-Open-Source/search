@@ -21,6 +21,18 @@ dependencies = [
   "typer[all]",
 ]
 
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "pytest-cov",
+]
+lint = [
+  "flake8",
+  "black",
+  "isort",
+  "pyupgrade",
+]
+
 [project.urls]
 "Homepage" = "https://github.com/pybites/search"
 "Bug Tracker" = "https://github.com/pybites/search/issues"

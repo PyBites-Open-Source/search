@@ -13,7 +13,6 @@ class ContentPiece(NamedTuple):
 
 
 class PybitesSearch(metaclass=ABCMeta):
-
     @abstractmethod
     def match_content(self, search: str) -> list[ContentPiece]:
         """Search through Pybites content, implement for a specific source"""
