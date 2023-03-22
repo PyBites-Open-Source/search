@@ -6,7 +6,7 @@ YOUTUBE_ENDPOINT = "https://codechalleng.es/api/videos/"
 YOUTUBE_BASE_URL = "https://www.youtube.com/watch?v="
 
 
-class YoutubeSearch(PybitesSearch):
+class YouTubeSearch(PybitesSearch):
     def match_content(self, search: str) -> list[ContentPiece]:
         entries = requests.get(YOUTUBE_ENDPOINT, timeout=5).json()
         results = []
@@ -22,6 +22,6 @@ class YoutubeSearch(PybitesSearch):
 
 
 if __name__ == "__main__":
-    searcher = YoutubeSearch()
+    searcher = YouTubeSearch()
     results = searcher.match_content("django")
     searcher.show_matches(results)
