@@ -4,9 +4,9 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pybites_search"
-version = "0.0.1"
+version = "0.0.3"
 authors = [
-  { name="Example Author", email="info@pybit.es" },
+  { name="Pybites", email="info@pybit.es" },
 ]
 description = "A search engine for Pybites content"
 readme = "README.md"
@@ -16,7 +16,14 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+  "requests",
+  "typer[all]",
+]
 
 [project.urls]
 "Homepage" = "https://github.com/pybites/search"
 "Bug Tracker" = "https://github.com/pybites/search/issues"
+
+[project.scripts]
+search = "pybites_search.cli:app"
