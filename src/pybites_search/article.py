@@ -24,6 +24,6 @@ class ArticleSearch(PybitesSearch):
 
 
 if __name__ == "__main__":
-    search = ArticleSearch()
-    results = search.match_content("django")
-    print(results)
+    searcher = ArticleSearch()
+    results = searcher.match_content("django")
+    searcher.show_matches(results)

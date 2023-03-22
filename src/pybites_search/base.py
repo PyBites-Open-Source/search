@@ -1,6 +1,11 @@
 from abc import ABCMeta, abstractmethod
 from typing import NamedTuple
 
+from rich.console import Console
+from rich.table import Table
+
+console = Console()
+
 
 class ContentPiece(NamedTuple):
     title: str
@@ -13,3 +18,9 @@ class PybitesSearch(metaclass=ABCMeta):
     def match_content(self, search: str) -> list[ContentPiece]:
         """Search through Pybites content, implement for a specific source"""
 
+    def show_matches(self, content: list[ContentPiece]) -> None:
+        """Show search results in a nice table"""
+        table = Table("Title", "Url")
+        for row in content:
+            table.add_row(row.title, row.url)
+        console.print(table)
