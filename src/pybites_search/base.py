@@ -5,6 +5,7 @@ from rich.console import Console
 from rich.table import Table
 
 console = Console()
+error_console = Console(stderr=True, style="bold red")
 
 
 class ContentPiece(NamedTuple):
@@ -19,7 +20,10 @@ class PybitesSearch(metaclass=ABCMeta):
 
     def show_matches(self, content: list[ContentPiece]) -> None:
         """Show search results in a nice table"""
-        table = Table("Title", "Url")
-        for row in content:
-            table.add_row(row.title, row.url)
-        console.print(table)
+        if content:
+            table = Table("Title", "Url")
+            for row in content:
+                table.add_row(row.title, row.url)
+            console.print(table)
+        else:
+            error_console.print("No results found")
