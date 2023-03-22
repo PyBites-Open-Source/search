@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pybites_search"
-version = "0.0.5"
+version = "0.0.6"
 authors = [
   { name="Pybites", email="info@pybit.es" },
 ]
@@ -17,6 +17,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+  "feedparser",
   "requests",
   "typer[all]",
 ]

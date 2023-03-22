@@ -2,6 +2,7 @@ import typer
 
 from .article import ArticleSearch
 from .bite import BiteSearch
+from .podcast import PodcastSearch
 from .youtube import YouTubeSearch
 
 app = typer.Typer()
@@ -15,14 +16,21 @@ def article(search: str):
 
 
 @app.command()
-def video(search: str):
-    searcher = YouTubeSearch()
+def bite(search: str):
+    searcher = BiteSearch()
     results = searcher.match_content(search)
     searcher.show_matches(results)
 
 
 @app.command()
-def bite(search: str):
-    searcher = BiteSearch()
+def podcast(search: str):
+    searcher = PodcastSearch()
+    results = searcher.match_content(search)
+    searcher.show_matches(results)
+
+
+@app.command()
+def video(search: str):
+    searcher = YouTubeSearch()
     results = searcher.match_content(search)
     searcher.show_matches(results)
