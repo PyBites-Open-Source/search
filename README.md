@@ -22,6 +22,7 @@ $ search --help
 ╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 │ article                                                                                                                                                     │
+│ bite                                                                                                                                                        │
 │ video                                                                                                                                                       │
 ╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
@@ -38,4 +39,20 @@ $ search video property
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
 │ Python @property decorator explained │ https://www.youtube.com/watch?v=8BbngXWouzo │
 └──────────────────────────────────────┴─────────────────────────────────────────────┘
+
+$ search bite fastapi
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Title                                             ┃ Url                               ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ FastAPI Exception handling                        │ https://codechalleng.es/bites/343 │
+│ FastAPI Hello World                               │ https://codechalleng.es/bites/336 │
+│ A little detour: Pydantic                         │ https://codechalleng.es/bites/337 │
+│ Update and delete food objects                    │ https://codechalleng.es/bites/340 │
+│ Food logging CRUD                                 │ https://codechalleng.es/bites/342 │
+│ FastAPI Authentication with JWT (JSON Web Tokens) │ https://codechalleng.es/bites/345 │
+│ Return an HTML response                           │ https://codechalleng.es/bites/344 │
+│ Create food objects                               │ https://codechalleng.es/bites/338 │
+│ Retrieve food objects                             │ https://codechalleng.es/bites/339 │
+│ Pydantic part II                                  │ https://codechalleng.es/bites/341 │
+└───────────────────────────────────────────────────┴───────────────────────────────────┘
 ```
