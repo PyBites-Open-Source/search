@@ -23,3 +23,9 @@ repos:
     rev: v3.3.1
     hooks:
     -   id: pyupgrade
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.1.1
+    hooks:
+      - id: mypy
+        args: [--no-strict-optional, --ignore-missing-imports]
+        additional_dependencies: [types-docutils, types-requests]
