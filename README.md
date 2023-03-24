@@ -76,3 +76,15 @@ $ search video property
 │ Python @property decorator explained │ https://www.youtube.com/watch?v=8BbngXWouzo │
 └──────────────────────────────────────┴─────────────────────────────────────────────┘
 ```
+
+## Changelog
+
+| Version | Features                                    |
+| ------- | ------------------------------------------- |
+| 0.0.1   | Initial package creation on PDM code clinic |
+| 0.0.2   | ditto                                       |
+| 0.0.3   | ditto                                       |
+| 0.0.4   | Add Pybites Youtube search                  |
+| 0.0.5   | Add platform Bite (exercise) search         |
+| 0.0.6   | Add Pybites Podcast search                  |
+| 0.0.7   | Add Pybites tips search                     |
