@@ -88,3 +88,4 @@ $ search video property
 | 0.0.5   | Add platform Bite (exercise) search         |
 | 0.0.6   | Add Pybites Podcast search                  |
 | 0.0.7   | Add Pybites tips search                     |
+| 0.0.8   | Move podcast feed parsing to our platform   |
