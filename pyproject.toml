@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pybites_search"
-version = "0.0.8"
+version = "0.0.9"
 authors = [
   { name="Pybites", email="info@pybit.es" },
 ]
 description = "A search engine for Pybites content"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -23,8 +23,10 @@ dependencies = [
 
 [project.optional-dependencies]
 test = [
+  "tox",
   "pytest",
   "pytest-cov",
+  "strip_ansi",
 ]
 lint = [
   "flake8",
