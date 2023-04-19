@@ -42,3 +42,6 @@ lint = [
 
 [project.scripts]
 search = "pybites_search.cli:app"
+
+[tool.hatch.build]
+only-packages = true
