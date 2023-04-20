@@ -77,6 +77,8 @@ $ search video property
 │ Python @property decorator explained │ https://www.youtube.com/watch?v=8BbngXWouzo │
 └──────────────────────────────────────┴─────────────────────────────────────────────┘
 
+# and to search across all content channels:
+
 $ search all decouple
 Pybites Articles
 No results found

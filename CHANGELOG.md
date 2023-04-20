@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.11] - 2023-04-20
 
 ### Added
-- Ability to search across all channels (articles, bites, podcasts, tips, YouTube videos) with the all subcommand.
+- Ability to search across all channels (articles, bites, podcasts, tips, YouTube videos) with the `all` subcommand.
 
 ## [0.0.10] - 2023-04-20
 
