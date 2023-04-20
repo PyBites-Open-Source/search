@@ -82,15 +82,4 @@ By default any requests calls to the different Pybites API endpoints are cached 
 
 ## Changelog
 
-| Version | Features                                    |
-| ------- | ------------------------------------------- |
-| 0.0.1   | Initial package creation on PDM code clinic |
-| 0.0.2   | ditto                                       |
-| 0.0.3   | ditto                                       |
-| 0.0.4   | Add Pybites Youtube search                  |
-| 0.0.5   | Add platform Bite (exercise) search         |
-| 0.0.6   | Add Pybites Podcast search                  |
-| 0.0.7   | Add Pybites tips search                     |
-| 0.0.8   | Move podcast feed parsing to our platform   |
-| 0.0.9   | Add tox + testing to support 3.9 + 3.10     |
-| 0.0.10  | Cache requests calls for faster performance |
+Check out the changelog [here](CHANGELOG.md)
