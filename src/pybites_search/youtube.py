@@ -1,5 +1,3 @@
-import requests
-
 from .base import ContentPiece, PybitesSearch
 
 YOUTUBE_ENDPOINT = "https://codechalleng.es/api/videos/"
@@ -8,7 +6,7 @@ YOUTUBE_BASE_URL = "https://www.youtube.com/watch?v="
 
 class YouTubeSearch(PybitesSearch):
     def match_content(self, search: str) -> list[ContentPiece]:
-        entries = requests.get(YOUTUBE_ENDPOINT, timeout=5).json()
+        entries = self.get_data(YOUTUBE_ENDPOINT)
         results = []
         for entry in entries:
             if search.lower() in (entry["title"] + entry["description"]).lower():

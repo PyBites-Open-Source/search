@@ -76,6 +76,9 @@ $ search video property
 │ Python @property decorator explained │ https://www.youtube.com/watch?v=8BbngXWouzo │
 └──────────────────────────────────────┴─────────────────────────────────────────────┘
 ```
+## Caching
+
+By default any requests calls to the different Pybites API endpoints are cached for 24 hours, you can change that setting the `CACHE_EXPIRATION_SECONDS` environment variable.
 
 ## Changelog
 
@@ -90,3 +93,4 @@ $ search video property
 | 0.0.7   | Add Pybites tips search                     |
 | 0.0.8   | Move podcast feed parsing to our platform   |
 | 0.0.9   | Add tox + testing to support 3.9 + 3.10     |
+| 0.0.10  | Cache requests calls for faster performance |

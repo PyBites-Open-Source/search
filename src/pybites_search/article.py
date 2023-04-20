@@ -1,5 +1,3 @@
-import requests
-
 from .base import ContentPiece, PybitesSearch
 
 ARTICLE_ENDPOINT = "https://codechalleng.es/api/articles/"
@@ -7,7 +5,7 @@ ARTICLE_ENDPOINT = "https://codechalleng.es/api/articles/"
 
 class ArticleSearch(PybitesSearch):
     def match_content(self, search: str) -> list[ContentPiece]:
-        entries = requests.get(ARTICLE_ENDPOINT, timeout=5).json()
+        entries = self.get_data(ARTICLE_ENDPOINT)
         results = []
         for entry in entries:
             if search.lower() in (entry["title"] + entry["summary"]).lower():
