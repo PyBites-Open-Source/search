@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.12] - 2023-04-21
 
 ### Fixed
-- Cache db was stored wherever the search command was run, this needs to be a fixed version.
+- Cache db was stored wherever the search command was run, this needs to be a fixed location.
 
 ### Added
 - Added a `CACHE_DB_LOCATION` env variable so user can define where this file is stored. If not set we default to the user's home directory.
