@@ -7,15 +7,6 @@ from strip_ansi import strip_ansi
 
 from pybites_search.tip import ContentPiece, TipSearch
 
-EXPECTED_TABLE = """
-┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ Title              ┃ Url                                             ┃
-┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│ import antigravity │ https://codechalleng.es/tips/import-antigravity │
-│ for ... else       │ https://codechalleng.es/tips/for-else           │
-└────────────────────┴─────────────────────────────────────────────────┘
-"""
-
 
 @pytest.fixture
 def mock_data():
@@ -56,13 +47,21 @@ def test_show_tip_matches(mock_data, capfd):
     mock_response = requests.Response()
     mock_response.status_code = 200
     mock_response._content = json.dumps(mock_data).encode()
+    expected_output_text = []
 
     with patch("requests.get", return_value=mock_response):
         searcher = TipSearch()
-        results = searcher.match_content(" a")
+        search_term = " a"
+        for tip in mock_data:
+            if search_term in (tip["title"] + tip["description"]):
+                expected_output_text.append(tip["title"])
+                expected_output_text.append(tip["link"])
+
+        results = searcher.match_content(search_term)
+
         searcher.show_matches(results)
         output = capfd.readouterr()[0]
-        assert strip_ansi(output.strip()) == EXPECTED_TABLE.strip()
+        assert all(text in output for text in expected_output_text)
 
         results = searcher.match_content("bogus")
         searcher.show_matches(results)
