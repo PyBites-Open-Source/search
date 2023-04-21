@@ -5,12 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.0.11] - 2023-04-20
+## [0.0.11] - 2023-04-21
 
 ### Added
 - Ability to search across all channels (articles, bites, podcasts, tips, YouTube videos) with the `all` subcommand.
 
-## [0.0.10] - 2023-04-20
+## [0.0.10] - 2023-04-21
 
 ### Added
 - Caching requests calls by default. You can adjust the expiration using `CACHE_EXPIRATION_SECONDS`
