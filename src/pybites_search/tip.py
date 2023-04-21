@@ -1,5 +1,3 @@
-import requests
-
 from .base import ContentPiece, PybitesSearch
 
 TIPS_ENDPOINT = "https://codechalleng.es/api/pytips/"
@@ -7,7 +5,7 @@ TIPS_ENDPOINT = "https://codechalleng.es/api/pytips/"
 
 class TipSearch(PybitesSearch):
     def match_content(self, search: str) -> list[ContentPiece]:
-        entries = requests.get(TIPS_ENDPOINT, timeout=5).json()
+        entries = self.get_data(TIPS_ENDPOINT)
         results = []
         for entry in entries:
             if search.lower() in (entry["title"] + entry["description"]).lower():
