@@ -115,3 +115,45 @@ By default any requests calls to the different Pybites API endpoints are cached 
 ## Changelog
 
 Check out the changelog [here](CHANGELOG.md)
+
+## Developer setup instructions
+
+To do dev work on this repo:
+
+1. Check out the repo and make a virtual environment and activate it:
+
+```
+# original repo or make a fork and clone that if you want to contribute
+
+$ git clone git@github.com:PyBites-Open-Source/search.git
+
+$ cd search
+√ search (main) $ python3 -m venv venv && source venv/bin/activate
+
+# for Windows this would be something like:
+py -3 -m venv venv && venv\scripts\activate
+```
+
+2. Install the regular + test + linting dependencies:
+
+```
+(venv) √ search (main) $ python -m pip install .
+(venv) √ search (main) $ python -m pip install ".[test,lint]"
+```
+
+3. Use the tool / run the tests
+
+```
+(venv) √ search (main) $ search ...
+...
+
+(venv) √ search (main) $ tox
+...
+...
+  py39: OK (15.89=setup[14.49]+cmd[1.40] seconds)
+  py310: OK (13.22=setup[11.80]+cmd[1.42] seconds)
+  py311: OK (10.42=setup[9.41]+cmd[1.01] seconds)
+  congratulations :) (39.61 seconds)
+```
+
+4. Code, have fun, contribute ... 💪 🙏
