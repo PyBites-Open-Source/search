@@ -3,7 +3,6 @@ from unittest.mock import patch
 
 import pytest
 import requests
-from strip_ansi import strip_ansi
 
 from pybites_search.tip import ContentPiece, TipSearch
 
@@ -66,4 +65,4 @@ def test_show_tip_matches(mock_data, capfd):
         results = searcher.match_content("bogus")
         searcher.show_matches(results)
         err_output = capfd.readouterr()[1]
-        assert strip_ansi(err_output.strip()) == "No results found"
+        assert err_output.strip() == "No results found"

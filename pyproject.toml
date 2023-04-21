@@ -28,7 +28,6 @@ test = [
   "tox",
   "pytest",
   "pytest-cov",
-  "strip_ansi",
 ]
 lint = [
   "flake8",
