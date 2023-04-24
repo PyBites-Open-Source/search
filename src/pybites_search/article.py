@@ -4,6 +4,9 @@ ARTICLE_ENDPOINT = "https://codechalleng.es/api/articles/"
 
 
 class ArticleSearch(PybitesSearch):
+    def __init__(self) -> None:
+        self.title = "Pybites Articles"
+
     def match_content(self, search: str) -> list[ContentPiece]:
         entries = self.get_data(ARTICLE_ENDPOINT)
         results = []
@@ -11,8 +14,7 @@ class ArticleSearch(PybitesSearch):
             if search.lower() in (entry["title"] + entry["summary"]).lower():
                 results.append(
                     ContentPiece(
-                        title=entry["title"],
-                        url=entry["link"],
+                        title=entry["title"], url=entry["link"], channel=self.title
                     )
                 )
         return results

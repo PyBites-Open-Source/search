@@ -1,5 +1,6 @@
 import typer
 
+from .all_content import AllSearch
 from .article import ArticleSearch
 from .bite import BiteSearch
 from .podcast import PodcastSearch
@@ -46,17 +47,6 @@ def video(search: str):
 
 @app.command()
 def all(search: str):
-    classes = (ArticleSearch, BiteSearch, PodcastSearch, TipSearch, YouTubeSearch)
-    titles = (
-        "Articles",
-        "Bite Exercises",
-        "Podcast Episodes",
-        "Python Tips",
-        "YouTube videos",
-    )
-    for title, cls_ in zip(titles, classes):
-        searcher = cls_()  # type: ignore
-        results = searcher.match_content(search)
-        title = f"Pybites {title}"
-        searcher.show_header(title)
-        searcher.show_matches(results, extra_nl=True)
+    searcher = AllSearch()
+    results = searcher.match_content(search)
+    searcher.show_matches(results)

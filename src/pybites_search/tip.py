@@ -4,6 +4,9 @@ TIPS_ENDPOINT = "https://codechalleng.es/api/pytips/"
 
 
 class TipSearch(PybitesSearch):
+    def __init__(self) -> None:
+        self.title = "Pybites Python Tips"
+
     def match_content(self, search: str) -> list[ContentPiece]:
         entries = self.get_data(TIPS_ENDPOINT)
         results = []
@@ -11,8 +14,7 @@ class TipSearch(PybitesSearch):
             if search.lower() in (entry["title"] + entry["description"]).lower():
                 results.append(
                     ContentPiece(
-                        title=entry["title"],
-                        url=entry["link"],
+                        title=entry["title"], url=entry["link"], channel=self.title
                     )
                 )
         return results

@@ -5,6 +5,9 @@ PLATFORM_BASE_URL = "https://codechalleng.es/bites/"
 
 
 class BiteSearch(PybitesSearch):
+    def __init__(self) -> None:
+        self.title = "Pybites Bite Exercises"
+
     def match_content(self, search: str) -> list[ContentPiece]:
         entries = self.get_data(BITES_ENDPOINT)
         results = []
@@ -14,6 +17,7 @@ class BiteSearch(PybitesSearch):
                     ContentPiece(
                         title=entry["title"],
                         url=f"{PLATFORM_BASE_URL}{entry['number']}",
+                        channel=self.title,
                     )
                 )
         return results

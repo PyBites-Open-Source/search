@@ -5,6 +5,9 @@ YOUTUBE_BASE_URL = "https://www.youtube.com/watch?v="
 
 
 class YouTubeSearch(PybitesSearch):
+    def __init__(self) -> None:
+        self.title = "Pybites YouTube Videos"
+
     def match_content(self, search: str) -> list[ContentPiece]:
         entries = self.get_data(YOUTUBE_ENDPOINT)
         results = []
@@ -14,6 +17,7 @@ class YouTubeSearch(PybitesSearch):
                     ContentPiece(
                         title=entry["title"],
                         url=YOUTUBE_BASE_URL + entry["video_id"],
+                        channel=self.title,
                     )
                 )
         return results
