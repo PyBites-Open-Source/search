@@ -4,6 +4,8 @@ import requests
 
 from pybites_search.article import ArticleSearch, ContentPiece
 
+CHANNEL = "Pybites Articles"
+
 
 def test_match_article_content():
     mock_entries = [
@@ -33,10 +35,12 @@ def test_match_article_content():
         ContentPiece(
             title="Django vs Flask: Which Framework to Choose?",
             url="https://example.com/django-vs-flask",
+            channel=CHANNEL,
         ),
         ContentPiece(
             title="Building a CMS with Django",
             url="https://example.com/django-cms",
+            channel=CHANNEL,
         ),
     ]
     assert results == expected_results

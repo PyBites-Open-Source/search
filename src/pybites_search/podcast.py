@@ -5,6 +5,9 @@ PODCAST_BASE_URL = "https://www.pybitespodcast.com/1501156/"
 
 
 class PodcastSearch(PybitesSearch):
+    def __init__(self) -> None:
+        self.title = "Pybites Podcast Episodes"
+
     def match_content(self, search: str) -> list[ContentPiece]:
         entries = self.get_data(PODCAST_ENDPOINT)
         results = []
@@ -14,6 +17,7 @@ class PodcastSearch(PybitesSearch):
                     ContentPiece(
                         title=entry["title"],
                         url=PODCAST_BASE_URL + entry["slug"],
+                        channel=self.title,
                     )
                 )
         return results

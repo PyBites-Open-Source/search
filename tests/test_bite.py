@@ -5,6 +5,8 @@ import requests
 
 from pybites_search.bite import BiteSearch, ContentPiece
 
+CHANNEL = "Pybites Bite Exercises"
+
 
 def test_match_bite_content():
     mock_entries = [
@@ -34,6 +36,7 @@ def test_match_bite_content():
         ContentPiece(
             title="Bite 3: Palindromes",
             url="https://codechalleng.es/bites/3",
+            channel=CHANNEL,
         ),
     ]
     assert results == expected_results

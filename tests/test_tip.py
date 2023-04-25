@@ -6,6 +6,8 @@ import requests
 
 from pybites_search.tip import ContentPiece, TipSearch
 
+CHANNEL = "Pybites Python Tips"
+
 
 @pytest.fixture
 def mock_data():
@@ -24,7 +26,9 @@ def test_match_tip_content(mock_data):
         results = searcher.match_content("zen")
         expected = [
             ContentPiece(
-                title="Zen of Python", url="https://codechalleng.es/tips/zen-of-python"
+                title="Zen of Python",
+                url="https://codechalleng.es/tips/zen-of-python",
+                channel=CHANNEL,
             )
         ]
         assert results == expected
@@ -34,9 +38,12 @@ def test_match_tip_content(mock_data):
             ContentPiece(
                 title="import antigravity",
                 url="https://codechalleng.es/tips/import-antigravity",
+                channel=CHANNEL,
             ),
             ContentPiece(
-                title="for ... else", url="https://codechalleng.es/tips/for-else"
+                title="for ... else",
+                url="https://codechalleng.es/tips/for-else",
+                channel=CHANNEL,
             ),
         ]
         assert results == expected

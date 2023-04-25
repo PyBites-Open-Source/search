@@ -5,6 +5,8 @@ import requests
 
 from pybites_search.podcast import ContentPiece, PodcastSearch
 
+CHANNEL = "Pybites Podcast Episodes"
+
 
 def test_match_podcast_content():
     with open("tests/data/podcast.json") as f:
@@ -22,10 +24,12 @@ def test_match_podcast_content():
         ContentPiece(
             title="#110 - Dane Hillard on Python packaging and effective developer tooling",
             url="https://www.pybitespodcast.com/1501156/12592983-110-dane-hillard-on-python-packaging-and-effective-developer-tooling",
+            channel=CHANNEL,
         ),
         ContentPiece(
             title="#108 - Teaching packaging by building a Python package",
             url="https://www.pybitespodcast.com/1501156/12512231-108-teaching-packaging-by-building-a-python-package",
+            channel=CHANNEL,
         ),
     ]
     assert results == expected_results

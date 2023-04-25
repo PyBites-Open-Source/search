@@ -4,6 +4,8 @@ import requests
 
 from pybites_search.youtube import YouTubeSearch
 
+CHANNEL = "Pybites YouTube Videos"
+
 
 def test_match_video_content():
     mock_response = MagicMock()
