@@ -67,7 +67,8 @@ def test_show_tip_matches(mock_data, capfd):
 
         searcher.show_matches(results)
         output = capfd.readouterr()[0]
-        assert all(text in output for text in expected_output_text)
+        for text in expected_output_text:
+            assert text in output
 
         results = searcher.match_content("bogus")
         searcher.show_matches(results)
