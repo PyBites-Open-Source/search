@@ -36,6 +36,8 @@ tools = [
   "pyupgrade",
   "mypy",
   "pre-commit",
+  "build",
+  "twine",
 ]
 
 [project.urls]
