@@ -9,7 +9,3 @@ lint:
 .PHONY: test
 test:
 	tox
-
-.PHONY: upload
-upload:
-	python -m build && python -m twine upload dist/*
