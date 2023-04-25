@@ -4,6 +4,8 @@ A command line tool to easily search across Pybites content.
 
 ## Installation
 
+`pybites-search` is hosted on PyPI and you can install it in a virtual environment like this:
+
 ```
 $ pip install pybites-search
 ```
@@ -134,11 +136,11 @@ $ cd search
 py -3 -m venv venv && venv\scripts\activate
 ```
 
-2. Install the regular + test + linting dependencies:
+2. Install the regular + test + tooling dependencies:
 
 ```
 (venv) √ search (main) $ python -m pip install .
-(venv) √ search (main) $ python -m pip install ".[test,lint]"
+(venv) √ search (main) $ python -m pip install ".[test,tools]"
 ```
 
 3. Use the tool / run the tests
