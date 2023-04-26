@@ -23,32 +23,31 @@ class AllSearch(PybitesSearch):
 
     def show_matches(self, content: list[ContentPiece]) -> None:
         """Show search results in a nice table"""
-        if content:
-            channel = None
-            table = Table(
-                "Title",
-                "Url",
-                title=self.title,
-                header_style=STYLE_HEADER,
-                show_header=False,
-                title_style=STYLE_HEADER,
-            )
-            for row in content:
-                if row.channel != channel:
-                    if channel:
-                        table.add_section()
-                    table.add_row(
-                        row.channel,
-                        "Url",
-                        style=STYLE_HEADER,
-                        end_section=True,
-                    )
-                    channel = row.channel
-                table.add_row(row.title, row.url)
-
-            console.print(table)
-        else:
+        if not content:
             error_console.print("No results found")
+            return
+
+        channel = None
+        table = Table(
+            "Title",
+            "Url",
+            title=self.title,
+            show_header=False,
+            title_style=STYLE_HEADER,
+        )
+        for row in content:
+            if row.channel != channel:
+                table.add_section()
+                table.add_row(
+                    row.channel,
+                    "Url",
+                    style=STYLE_HEADER,
+                    end_section=True,
+                )
+                channel = row.channel
+            table.add_row(row.title, row.url)
+
+        console.print(table)
 
 
 if __name__ == "__main__":

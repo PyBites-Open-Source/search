@@ -10,43 +10,36 @@ from .youtube import YouTubeSearch
 app = typer.Typer()
 
 
-@app.command()
-def article(search: str):
-    searcher = ArticleSearch()
+def search_content(searcher, search):
     results = searcher.match_content(search)
     searcher.show_matches(results)
+
+
+@app.command()
+def article(search: str):
+    search_content(ArticleSearch(), search)
 
 
 @app.command()
 def bite(search: str):
-    searcher = BiteSearch()
-    results = searcher.match_content(search)
-    searcher.show_matches(results)
+    search_content(BiteSearch(), search)
 
 
 @app.command()
 def podcast(search: str):
-    searcher = PodcastSearch()
-    results = searcher.match_content(search)
-    searcher.show_matches(results)
+    search_content(PodcastSearch(), search)
 
 
 @app.command()
 def tip(search: str):
-    searcher = TipSearch()
-    results = searcher.match_content(search)
-    searcher.show_matches(results)
+    search_content(TipSearch(), search)
 
 
 @app.command()
 def video(search: str):
-    searcher = YouTubeSearch()
-    results = searcher.match_content(search)
-    searcher.show_matches(results)
+    search_content(YouTubeSearch(), search)
 
 
 @app.command()
 def all(search: str):
-    searcher = AllSearch()
-    results = searcher.match_content(search)
-    searcher.show_matches(results)
+    search_content(AllSearch(), search)

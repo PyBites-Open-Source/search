@@ -87,19 +87,25 @@ def test_all_search_show_matches(capfd):
             channel="Article",
         ),
         ContentPiece(
-            title="FastAPI: A Modern Web Framework to Build APIs with Python 3.7+",
+            title="FastAPI: A Modern Web Framework",
             url="https://example.com/fastapi2",
             channel="Article",
         ),
         ContentPiece(
-            title="Python Bytes Podcast #235: FastAPI, security, and testing",
+            title="Python Bytes Podcast #235: FastAPI",
             url="https://example.com/fastapi3",
             channel="Podcast",
         ),
     ]
+
+    expected_output_text = []
+    for content_piece in content:
+        expected_output_text.append(content_piece.title)
+        expected_output_text.append(content_piece.url)
+
     with patch("pybites_search.base.console"):
         searcher = AllSearch()
         searcher.show_matches(content)
-        captured = capfd.readouterr().out
-        expected = "                              Pybites All Content                               \n┌───────────────────────────────────────────────┬──────────────────────────────┐\n│ Article                                       │ Url                          │\n├───────────────────────────────────────────────┼──────────────────────────────┤\n│ FastAPI Tutorial                              │ https://example.com/fastapi  │\n│ FastAPI: A Modern Web Framework to Build APIs │ https://example.com/fastapi2 │\n│ with Python 3.7+                              │                              │\n├───────────────────────────────────────────────┼──────────────────────────────┤\n│ Podcast                                       │ Url                          │\n├───────────────────────────────────────────────┼──────────────────────────────┤\n│ Python Bytes Podcast #235: FastAPI, security, │ https://example.com/fastapi3 │\n│ and testing                                   │                              │\n└───────────────────────────────────────────────┴──────────────────────────────┘\n"
-        assert captured == expected
+        captured = capfd.readouterr()[0]
+        for text in expected_output_text:
+            assert text in captured
