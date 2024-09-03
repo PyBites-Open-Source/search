@@ -147,3 +147,33 @@ py -3 -m venv venv && venv\scripts\activate
 ```
 
 4. Code, have fun, contribute ... 💪 🙏
+
+
+### When using `pixi` use these instructions
+1. Check out the repo
+```
+git clone git@github.com:PyBites-Open-Source/search.git
+cd search
+```
+
+2. Run the tool
+```
+# Find fastapi mentions in all pybites content
+pixi run all fastapi
+
+# Find fastapi only in the podcasts
+pixi run podcast fastapi
+```
+
+3. Test on all python version
+```
+# Installs and runs 3 test environments including different versions of python.
+pixi run test
+
+# If you want to test one python version run
+pixi run test39
+pixi run test310
+pixi run test311
+```
+
+4. Code, have fun, contribute ... 💪 🙏
