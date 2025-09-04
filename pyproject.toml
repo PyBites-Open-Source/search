@@ -47,3 +47,43 @@ search = "pybites_search.cli:app"
 
 [tool.hatch.build]
 only-packages = true
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
+
+[tool.pixi.pypi-dependencies]
+pybites_search = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+# `pixi run` allows to add arguments after the pixi task name in cli.
+all = "search all"
+article = "search article"
+bite = "search bite"
+podcast = "search podcast"
+tip = "search tip"
+video = "search video"
+
+# One test command that runs all tests in different environments, like tox would do. 
+test = { depends-on = ["test39", "test310", "test311"] }
+
+# Let pixi install 3 different python versions to test on.
+[tool.pixi.feature.python39]
+dependencies = {python = "3.9"}
+tasks = { test39 = "pytest --cov=pybites_search --cov-report=term-missing" }
+[tool.pixi.feature.python310]
+dependencies = {python = "3.10"}
+tasks = { test310 = "pytest --cov=pybites_search --cov-report=term-missing" }
+[tool.pixi.feature.python311]
+dependencies = {python = "3.11"}
+tasks = { test311 = "pytest --cov=pybites_search --cov-report=term-missing" }
+
+[tool.pixi.environments]
+default = { solve-group = "default" }
+tools = { features = ["tools"], solve-group = "default" }
+test39 = { features = ["test", "python39"], solve-group = "default" }
+test310 = {features = ["test", "python310"]}
+test311 = {features = ["test", "python311"]}
+
+
+
