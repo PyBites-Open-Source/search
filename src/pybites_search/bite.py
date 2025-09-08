@@ -1,7 +1,7 @@
 from .base import ContentPiece, PybitesSearch
 
-BITES_ENDPOINT = "https://codechalleng.es/api/bites/"
-PLATFORM_BASE_URL = "https://codechalleng.es/bites/"
+BITES_ENDPOINT = "https://pybitesplatform.com/api/bites/"
+PLATFORM_BASE_URL = "https://pybitesplatform.com/bites/"
 
 
 class BiteSearch(PybitesSearch):
@@ -16,7 +16,7 @@ class BiteSearch(PybitesSearch):
                 results.append(
                     ContentPiece(
                         title=entry["title"],
-                        url=f"{PLATFORM_BASE_URL}{entry['number']}",
+                        url=f"{PLATFORM_BASE_URL}{entry['slug']}",
                         channel=self.title,
                     )
                 )
