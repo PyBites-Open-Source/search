@@ -47,17 +47,17 @@ def test_match_bite_content_no_results():
         {
             "title": "Bite 1: Hello, World!",
             "description": "Write a program that prints 'Hello, World!'",
-            "number": 1,
+            "slug": "hello-world",
         },
         {
             "title": "Bite 2: String Formatting",
             "description": "Learn the basics of string formatting in Python",
-            "number": 2,
+            "slug": "formatting-intro",
         },
         {
             "title": "Bite 3: Palindromes",
             "description": "Write a function to check if a word is a palindrome",
-            "number": 3,
+            "slug": "palindromes",
         },
     ]
     mock_response = requests.models.Response()

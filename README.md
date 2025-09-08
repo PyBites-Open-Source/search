@@ -118,13 +118,7 @@ We recommend using [uv](https://pypi.org/project/uv/) for development work on th
 $ git clone git@github.com:PyBites-Open-Source/search.git
 ```
 
-2. Create a virtual environment
-```
-$ cd search
-√ search (main) $ uv venv
-```
-
-3. Activate the virtual environment  
+2. Activate the virtual environment  
 *(This is optional if you run **all your commands** with `uv`, but is a safer option if you are new to this workflow)*
 ```
 # Linux and macOS
@@ -134,24 +128,37 @@ $ cd search
 √ search (main) $ .venv\scripts\activate
 ```
 
-4. Install dependencies (this will automatically include the *dev* dependency group)
+3. Install dependencies (this will automatically include the *dev* dependency group)
 
 ```
 (search) √ search (main) $ uv sync
 ```
 
-5. Use the tool / run the tests
+4. Use the tool / run the tests
 
 ```
 (search) √ search (main) $ search ...
 ...
 
-(search) √ search (main) $ tox
+(search) √ search (main) $ uv run pytest -vvv
 ...
 ...
-  py312: OK (6.47=setup[4.02]+cmd[2.45] seconds)
-  py313: OK (4.94=setup[3.66]+cmd[1.28] seconds)
-  congratulations :) (11.52 seconds)
-```
+configfile: pyproject.toml
+plugins: cov-6.2.1
+collected 11 items
+
+tests/test_all_content.py::test_all_search_match_content PASSED          [  9%]
+tests/test_all_content.py::test_all_search_show_matches PASSED           [ 18%]
+tests/test_article.py::test_match_article_content PASSED                 [ 27%]
+tests/test_article.py::test_match_article_content_no_results PASSED      [ 36%]
+tests/test_bite.py::test_match_bite_content PASSED                       [ 45%]
+tests/test_bite.py::test_match_bite_content_no_results PASSED            [ 54%]
+tests/test_bite.py::test_match_bite_content_timeout PASSED               [ 63%]
+tests/test_podcast.py::test_match_podcast_content PASSED                 [ 72%]
+tests/test_tip.py::test_match_tip_content PASSED                         [ 81%]
+tests/test_tip.py::test_show_tip_matches PASSED                          [ 90%]
+tests/test_youtube.py::test_match_video_content PASSED                   [100%]
+
+============================= 11 passed in 0.34s ==============================
 
 6. Code, have fun, contribute ... 💪 🙏

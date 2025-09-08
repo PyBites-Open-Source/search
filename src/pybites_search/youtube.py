@@ -1,6 +1,6 @@
-from .base import ContentPiece, PybitesSearch
+from .base import BASE_URL, ContentPiece, PybitesSearch
 
-YOUTUBE_ENDPOINT = "https://codechalleng.es/api/videos/"
+YOUTUBE_ENDPOINT = BASE_URL + "api/videos/"
 YOUTUBE_BASE_URL = "https://www.youtube.com/watch?v="
 
 

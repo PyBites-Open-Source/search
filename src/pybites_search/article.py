@@ -1,6 +1,6 @@
-from .base import ContentPiece, PybitesSearch
+from .base import BASE_URL, ContentPiece, PybitesSearch
 
-ARTICLE_ENDPOINT = "https://codechalleng.es/api/articles/"
+ARTICLE_ENDPOINT = BASE_URL + "api/articles/"
 
 
 class ArticleSearch(PybitesSearch):

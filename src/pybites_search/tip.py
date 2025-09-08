@@ -1,6 +1,7 @@
-from .base import ContentPiece, PybitesSearch
+from .base import ContentPiece, PybitesSearch, V2_BASE_URL
 
-TIPS_ENDPOINT = "https://codechalleng.es/api/pytips/"
+TIPS_ENDPOINT = V2_BASE_URL + "api/tips/"
+TIPS_URL = V2_BASE_URL + "tips/"
 
 
 class TipSearch(PybitesSearch):
@@ -14,7 +15,9 @@ class TipSearch(PybitesSearch):
             if search.lower() in (entry["title"] + entry["description"]).lower():
                 results.append(
                     ContentPiece(
-                        title=entry["title"], url=entry["link"], channel=self.title
+                        title=entry["title"],
+                        url=f"{TIPS_URL}{entry['slug']}",
+                        channel=self.title,
                     )
                 )
         return results

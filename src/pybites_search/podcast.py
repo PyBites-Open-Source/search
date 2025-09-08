@@ -1,6 +1,6 @@
-from .base import ContentPiece, PybitesSearch
+from .base import BASE_URL, ContentPiece, PybitesSearch
 
-PODCAST_ENDPOINT = "https://codechalleng.es/api/podcasts/"
+PODCAST_ENDPOINT = BASE_URL + "api/podcasts/"
 PODCAST_BASE_URL = "https://www.pybitespodcast.com/1501156/"
 
 
