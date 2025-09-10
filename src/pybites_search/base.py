@@ -8,6 +8,9 @@ from decouple import config
 from rich.console import Console
 from rich.table import Table
 
+BASE_URL = "https://codechalleng.es/"
+V2_BASE_URL = "https://pybitesplatform.com/"
+
 ONE_DAY_IN_SECONDS = 24 * 60 * 60
 TIMEOUT = 5
 

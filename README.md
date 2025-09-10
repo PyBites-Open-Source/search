@@ -108,72 +108,57 @@ Check out the changelog [here](CHANGELOG.md)
 
 ## Developer setup instructions
 
-To do dev work on this repo:
+We recommend using [uv](https://pypi.org/project/uv/) for development work on this repo. (Preferably installed via one of the standalone installers)
 
-1. Check out the repo and make a virtual environment and activate it:
+1. Check out the repo.
 
 ```
 # original repo or make a fork and clone that if you want to contribute
 
 $ git clone git@github.com:PyBites-Open-Source/search.git
-
-$ cd search
-√ search (main) $ python3 -m venv venv && source venv/bin/activate
-
-# for Windows this would be something like:
-py -3 -m venv venv && venv\scripts\activate
 ```
 
-2. Install the regular + test + tooling dependencies:
+2. Activate the virtual environment  
+*(This is optional if you run **all your commands** with `uv`, but is a safer option if you are new to this workflow)*
+```
+# Linux and macOS
+√ search (main) $ source venv/bin/activate
+
+# Windows
+√ search (main) $ .venv\scripts\activate
+```
+
+3. Install dependencies (this will automatically include the *dev* dependency group)
 
 ```
-(venv) √ search (main) $ python -m pip install .
-(venv) √ search (main) $ python -m pip install ".[test,tools]"
+(search) √ search (main) $ uv sync
 ```
 
-3. Use the tool / run the tests
+4. Use the tool / run the tests
 
 ```
-(venv) √ search (main) $ search ...
+(search) √ search (main) $ search ...
 ...
 
-(venv) √ search (main) $ tox
+(search) √ search (main) $ uv run pytest -vvv
 ...
 ...
-  py39: OK (15.89=setup[14.49]+cmd[1.40] seconds)
-  py310: OK (13.22=setup[11.80]+cmd[1.42] seconds)
-  py311: OK (10.42=setup[9.41]+cmd[1.01] seconds)
-  congratulations :) (39.61 seconds)
-```
+configfile: pyproject.toml
+plugins: cov-6.2.1
+collected 11 items
 
-4. Code, have fun, contribute ... 💪 🙏
+tests/test_all_content.py::test_all_search_match_content PASSED          [  9%]
+tests/test_all_content.py::test_all_search_show_matches PASSED           [ 18%]
+tests/test_article.py::test_match_article_content PASSED                 [ 27%]
+tests/test_article.py::test_match_article_content_no_results PASSED      [ 36%]
+tests/test_bite.py::test_match_bite_content PASSED                       [ 45%]
+tests/test_bite.py::test_match_bite_content_no_results PASSED            [ 54%]
+tests/test_bite.py::test_match_bite_content_timeout PASSED               [ 63%]
+tests/test_podcast.py::test_match_podcast_content PASSED                 [ 72%]
+tests/test_tip.py::test_match_tip_content PASSED                         [ 81%]
+tests/test_tip.py::test_show_tip_matches PASSED                          [ 90%]
+tests/test_youtube.py::test_match_video_content PASSED                   [100%]
 
+============================= 11 passed in 0.34s ==============================
 
-### When using `pixi` use these instructions
-1. Check out the repo
-```
-git clone git@github.com:PyBites-Open-Source/search.git
-cd search
-```
-
-2. Run the tool
-```
-# Find fastapi mentions in all pybites content
-pixi run all fastapi
-
-# Find fastapi only in the podcasts
-pixi run podcast fastapi
-```
-
-3. Test on all python version
-```
-# Installs and runs 3 test environments including different versions of python.
-pixi run test
-
-# If you want to test one python version run
-pixi run test39
-pixi run test310
-pixi run test311
-```
-
-4. Code, have fun, contribute ... 💪 🙏
+6. Code, have fun, contribute ... 💪 🙏
