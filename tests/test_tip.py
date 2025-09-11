@@ -4,9 +4,11 @@ from unittest.mock import patch
 import pytest
 import requests
 
+from pybites_search.base import V2_BASE_URL
 from pybites_search.tip import ContentPiece, TipSearch
 
 CHANNEL = "Pybites Python Tips"
+TIPS_URL = V2_BASE_URL + "tips/"
 
 
 @pytest.fixture
@@ -27,7 +29,7 @@ def test_match_tip_content(mock_data):
         expected = [
             ContentPiece(
                 title="Zen of Python",
-                url="https://codechalleng.es/tips/zen-of-python",
+                url=f"{TIPS_URL}zen-of-python",
                 channel=CHANNEL,
             )
         ]
@@ -37,12 +39,12 @@ def test_match_tip_content(mock_data):
         expected = [
             ContentPiece(
                 title="import antigravity",
-                url="https://codechalleng.es/tips/import-antigravity",
+                url=f"{TIPS_URL}import-antigravity",
                 channel=CHANNEL,
             ),
             ContentPiece(
                 title="for ... else",
-                url="https://codechalleng.es/tips/for-else",
+                url=f"{TIPS_URL}for-else",
                 channel=CHANNEL,
             ),
         ]
@@ -61,7 +63,7 @@ def test_show_tip_matches(mock_data, capfd):
         for tip in mock_data:
             if search_term in (tip["title"] + tip["description"]):
                 expected_output_text.append(tip["title"])
-                expected_output_text.append(tip["link"])
+                expected_output_text.append(tip["slug"])
 
         results = searcher.match_content(search_term)
 

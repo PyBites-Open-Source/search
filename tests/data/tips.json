@@ -2,26 +2,26 @@
     {
         "title": "Zen of Python",
         "description": "What is #Python's philosophy? Run \"import this\" in the REPL",
-        "link": "https://codechalleng.es/tips/zen-of-python"
+        "slug": "zen-of-python"
     },
     {
         "title": "braces?",
         "description": "Will #Python ever support braces?",
-        "link": "https://codechalleng.es/tips/braces"
+        "slug": "braces"
     },
     {
         "title": "import antigravity",
         "description": "We love #Python ... type \"import antigravity\" in the REPL and fly with us!",
-        "link": "https://codechalleng.es/tips/import-antigravity"
+        "slug": "import-antigravity"
     },
     {
         "title": "for ... else",
         "description": "#Python has a for...else construct, else is reached if nothing breaks the for loop",
-        "link": "https://codechalleng.es/tips/for-else"
+        "slug": "for-else"
     },
     {
         "title": "swap 2 variables",
         "description": "Need to swap 2 variables in Python? No problemo, just 1 line of code:",
-        "link": "https://codechalleng.es/tips/swap-2-variables"
+        "slug": "swap-2-variables"
     }
 ]
