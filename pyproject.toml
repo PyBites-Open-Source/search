@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "pybites_search"
-version = "1.0.0"
+version = "1.1.0"
 authors = [
   { name="Pybites", email="info@pybit.es" },
 ]
