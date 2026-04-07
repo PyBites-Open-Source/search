@@ -2,6 +2,9 @@
 
 A command line tool to easily search across Pybites content.
 
+**Update April 2026**: the Pybites v1 Platform (codechalleng.es) and this tool are EOL. 
+You can still use the [Rust version](https://crates.io/crates/pybites-search) to search legacy Pybites content.
+
 ## Installation
 
 `pybites-search` is hosted on PyPI and you can install it in a virtual environment like this:
